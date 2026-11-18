@@ -29,7 +29,7 @@ async function authUser(req, res, next){
 
   }
   catch(error){
-    return res.status(500).json({
+    return res.status(401).json({
       success: false,
       message:"Internal server error",
       error: error.message

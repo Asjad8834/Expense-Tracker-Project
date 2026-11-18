@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.routes.js";
+import subscriptionRouter from "./routes/subscription.routes.js";
 import morgan from "morgan";
   
 
@@ -15,7 +16,7 @@ app.use(morgan("dev"));
 
 // Middleware
 app.use("/api/auth", authRouter);
-
+app.use("/api/subscription", subscriptionRouter);
 
 
 //Default route
