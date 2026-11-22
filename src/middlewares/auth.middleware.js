@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import config from "../config/config/js";
+import config from "../config/config.js";
 
 async function authUser(req, res, next){
   try{
@@ -29,7 +29,7 @@ async function authUser(req, res, next){
 
   }
   catch(error){
-    return res.status(500).json({
+    return res.status(401).json({
       success: false,
       message:"Internal server error",
       error: error.message
