@@ -45,6 +45,8 @@ async function createSubscription(req, res){
       amount,
       currency,
       billingCycle,
+      startDate,
+      renewalDate,
       user: req.user.id // Assuming the user is authenticated and their ID is available in req.user
     });
 
