@@ -21,7 +21,27 @@ expenseRouter.post("/createExpense", authMiddleware.authUser, expenseController.
  */
 expenseRouter.get("/getExpense", authMiddleware.authUser,expenseController.getExpense);
 
+/**
+ * @route GET api/expense/:id
+ * @description Returns a User's particular expense
+ * @access Private
+ */
+expenseRouter.get("/:id", authMiddleware.authUser, expenseController.getExpenseById);
 
+/**
+ * @route PUT api/expense/:id
+ * @description Returns a User's expenses
+ * @access Private
+ */
+expenseRouter.put("/:id", authMiddleware.authUser, expenseController.updateExpense);
+
+
+/**
+ * @route DELETE api/expense/:id
+ * @description Delete User's expense
+ * @access Private
+ */
+expenseRouter.delete(":id", authMiddleware.authUser, expenseController.deleteExpense);
 
 
 export default expenseRouter;
