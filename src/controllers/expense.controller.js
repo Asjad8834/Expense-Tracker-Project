@@ -70,7 +70,7 @@ async function createExpense(req, res){
 }
 
 /**
- * @route GET api/expense/getExpense
+ * @route GET api/expenses/getExpense
  * @description Returns a User's expenses
  * @access Private
  */
@@ -128,7 +128,7 @@ async function getExpense(req, res){
 }
 
 /**
- * @route GET api/expense/:id
+ * @route GET api/expenses/:id
  * @description Returns a User's particular expense
  * @access Private
  */
@@ -172,7 +172,7 @@ async function getExpenseById(req, res){
 }
 
 /**
- * @route PUT api/expense/:id
+ * @route PUT api/expenses/:id
  * @description Update a User's expense
  * @access Private
  */
@@ -238,7 +238,7 @@ async function updateExpense(req, res){
 }
 
 /**
- * @route DELETE api/expense/:id
+ * @route DELETE api/expenses/:id
  * @description Returns a User's expenses
  * @access Private
  */
