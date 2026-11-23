@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.routes.js";
 import subscriptionRouter from "./routes/subscription.routes.js";
 import expenseRouter from "./routes/expense.routes.js"; 
+import budgetRouter from "./routes/budget.routes.js";
 import morgan from "morgan";
   
 
@@ -17,8 +18,9 @@ app.use(morgan("dev"));
 
 // Middleware
 app.use("/api/auth", authRouter);
-app.use("/api/subscription", subscriptionRouter);
-app.use("/api/expense", expenseRouter);
+app.use("/api/subscriptions", subscriptionRouter);
+app.use("/api/expenses", expenseRouter);
+app.use("/api/budgets", budgetRouter);
 
 
 //Default route

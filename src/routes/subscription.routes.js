@@ -7,7 +7,7 @@ const subscriptionRouter = express.Router();
 
 
 /**
- * @route POST /api/subscription/createSubscription
+ * @route POST /api/subscriptions/createSubscription
  * @description Create a new subscription, takes in name, amount, dueDate, category
  * @access Private
  */
@@ -15,7 +15,7 @@ subscriptionRouter.post("/createSubscription", authMiddleware.authUser, subscrip
  
 
 /**
- * @route GET /api/subscription/getSubscriptions
+ * @route GET /api/subscriptions/getSubscriptions
  * @description Get all subscriptions for the authenticated user
  * @access Private
  */
@@ -26,19 +26,19 @@ subscriptionRouter.get("/getSubscriptions", authMiddleware.authUser, subscriptio
  * @description Get a subscription by ID for the authenticated user
  * @access Private
  */
-subscriptionRouter.get("/getSubscription/:id", authMiddleware.authUser, subscriptionController.getSubscriptionById );
+subscriptionRouter.get("/getSubscriptions/:id", authMiddleware.authUser, subscriptionController.getSubscriptionById );
 
 
 /**
- * @route PUT /api/subscription/updateSubscription/:id
+ * @route PUT /api/subscription/updateSubscriptions/:id
  * @description Update a subscription by ID for the authenticated user
  * @access Private
  */
-subscriptionRouter.put("/updateSubscription/:id", authMiddleware.authUser, subscriptionController.updateSubscription );
+subscriptionRouter.put("/updateSubscriptions/:id", authMiddleware.authUser, subscriptionController.updateSubscription );
 
 
 /**
- * @route DELETE /api/subscription/deleteSubscription/:id
+ * @route DELETE /api/subscriptions/deleteSubscription/:id
  * @description Delete a subscription by ID for the authenticated user
  * @access Private
  */

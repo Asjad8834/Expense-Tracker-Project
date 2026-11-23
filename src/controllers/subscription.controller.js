@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 
 
 /**
- * @route POST /api/subscription/createSubscription
+ * @route POST /api/subscriptions/createSubscription
  * @description Create a new subscription, takes in name, amount, dueDate, category
  * @access Private
  */
@@ -68,7 +68,7 @@ async function createSubscription(req, res){
 
 
 /**
- * @route GET /api/subscription/getSubscriptions
+ * @route GET /api/subscriptions/getSubscriptions
  * @description Get all subscriptions for the authenticated user
  * @access Private
  */
@@ -97,7 +97,7 @@ async function getSubscriptions(req, res) {
 }
 
 /**
- * @route GET /api/subscription/getSubscription/:id
+ * @route GET /api/subscriptions/getSubscription/:id
  * @description Get a single subscription by ID for the authenticated user
  * @access Private
  */
@@ -136,7 +136,7 @@ async function getSubscriptionById(req, res) {
 
 
 /**
- * @route PUT /api/subscription/updateSubscription/:id
+ * @route PUT /api/subscriptions/updateSubscription/:id
  * @description Update a subscription by ID for the authenticated user
  * @access Private
  */
@@ -224,7 +224,7 @@ async function updateSubscription(req, res) {
 }
 
 /**
- * @route DELETE /api/subscription/deleteSubscription/:id
+ * @route DELETE /api/subscriptions/deleteSubscription/:id
  * @description Delete a subscription by ID for the authenticated user
  * @access Private
  */
