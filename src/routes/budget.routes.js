@@ -1,6 +1,7 @@
 import express from "express";
 import budgetController from "../controllers/budget.controller.js";
-import authUser from "../middlewares/auth.middleware.js";
+import authMiddleware from "../middlewares/auth.middleware.js";
+import validateMiddleware from "../middlewares/validate.middleware.js";
 
 const budgetRouter = express.Router();
 
@@ -11,7 +12,7 @@ const budgetRouter = express.Router();
  */
 budgetRouter.post(
     "/",
-    authUser,
+    authMiddleware.authUser, validateMiddleware.validateBudget,
     budgetController.createBudget
 );
 
@@ -22,7 +23,7 @@ budgetRouter.post(
  */
 budgetRouter.get(
     "/",
-    authUser,
+    authMiddleware.authUser,
     budgetController.getBudgets
 );
 
@@ -33,7 +34,7 @@ budgetRouter.get(
  */
 budgetRouter.get(
     "/:id",
-    authUser,
+    authMiddleware.authUser,
     budgetController.getBudgetById
 );
 
@@ -44,7 +45,7 @@ budgetRouter.get(
  */
 budgetRouter.put(
     "/:id",
-    authUser,
+    authMiddleware.authUser,
     budgetController.updateBudget
 );
 
@@ -55,7 +56,7 @@ budgetRouter.put(
  */
 budgetRouter.delete(
     "/:id",
-    authUser,
+    authMiddleware.authUser,
     budgetController.deleteBudget
 );
 

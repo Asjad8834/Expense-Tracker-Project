@@ -1,11 +1,11 @@
-import budgetModel from "../models/budget.model";
+import budgetModel from "../models/budget.model.js";
 
-
-/*
+/**
  * @routes POST /api/budgets
  * @description Create a new budget
  * @access Private
  */
+
 async function createBudget(req, res) {
     try {
 
