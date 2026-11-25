@@ -1,5 +1,6 @@
 import express from "express";
 import authController from "../controllers/auth.controller.js";
+import rateLimit from "../middlewares/rateLimit.middleware.js";
 
 const authRouter = express.Router();
 
@@ -17,7 +18,7 @@ authRouter.post("/register", authController.registerUser );
  * @description Login a user, takes in email and password
  * @access Public
  */
-authRouter.post("/login", authController.loginUser );
+authRouter.post("/login", rateLimit.loginRateLimiter, authController.loginUser );
 
 /**
  * @route POST /api/auth/logout
